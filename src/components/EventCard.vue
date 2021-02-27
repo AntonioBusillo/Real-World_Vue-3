@@ -1,7 +1,13 @@
 <template>
-  <div class="event-card">
-    <span>@{{ event.time }} on {{ event.date }}</span>
-    <h4>{{ event.title }}</h4>
+  <div class="event-card-tw">
+    <img
+      className="h-32 w-32 flex-shrink  object-cover object-center"
+      v-bind:src="require(`../assets/${event.image}`)"
+    />
+    <div class="px-6 py-4">
+      <h3 class="text-lg font-semibold text-gray-800">{{ event.title }}</h3>
+      <p class="text-gray-600">@{{ event.time }} on {{ event.date }}</p>
+    </div>
   </div>
 </template>
 
@@ -17,16 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.event-card {
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-}
-
-.event-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+.event-card-tw {
+  @apply flex items-center rounded-lg text-center bg-white shadow-lg overflow-hidden hover:scale-100 hover:shadow-lg transform;
 }
 </style>

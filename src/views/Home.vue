@@ -1,6 +1,11 @@
 <template>
-  <div class="events">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+  <div class="max-w-md mx-auto px-8 py-8">
+    <h2 class="text-7xl text-gray-900">Events</h2>
+    <p class="mt-2 text-gray-600">A selection of great events.</p>
+    <div class="mt-6 grid gap-y-6">
+      <!-- lg:grid-cols-2 xl:grid-cols-3 -->
+      <EventCard v-for="event in events" :key="event.id" :event="event" />
+    </div>
   </div>
 </template>
 
@@ -25,7 +30,8 @@ export default {
           date: 'January 28, 2022',
           time: '12:00',
           petsAllowed: true,
-          organizer: 'Kat Laydee'
+          organizer: 'Kat Laydee',
+          image: 'cat.jpg'
         },
         {
           id: 4582797,
@@ -36,7 +42,8 @@ export default {
           date: 'March 14, 2022',
           time: '10:00',
           petsAllowed: true,
-          organizer: 'Fern Pollin'
+          organizer: 'Fern Pollin',
+          image: 'food.jpg'
         },
         {
           id: 8419988,
@@ -47,7 +54,8 @@ export default {
           date: 'July 22, 2022',
           time: '11:00',
           petsAllowed: false,
-          organizer: 'Carey Wales'
+          organizer: 'Carey Wales',
+          image: 'beach.jpg'
         }
       ]
     }
@@ -55,10 +63,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+h1 {
+  @apply text-7xl text-blue-600;
+}
+
 .events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply md:container mx-auto;
 }
 </style>
